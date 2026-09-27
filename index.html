@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гороскоп на сегодня</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Шапка сайта -->
+  <header>
+    <h1>✨ Гороскоп на сегодня</h1>
+    <p id="today"></p>
+  </header>
+
+  <main>
+    <!-- Блок «Узнать свой знак» -->
+    <section class="find-sign">
+      <label for="birthday">Не знаете свой знак? Укажите дату рождения:</label>
+      <div class="find-row">
+        <input type="date" id="birthday">
+        <button id="find-btn">Узнать</button>
+      </div>
+    </section>
+
+    <!-- Сюда скрипт сам добавит 12 карточек знаков -->
+    <section class="signs" id="signs"></section>
+
+    <!-- Сюда выводится прогноз после клика по знаку -->
+    <section class="result" id="result" hidden>
+      <div class="result-symbol" id="result-symbol"></div>
+      <h2 id="result-name"></h2>
+      <p class="result-dates" id="result-dates"></p>
+      <p class="result-text" id="result-text"></p>
+      <p class="result-extra" id="result-extra"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Прогнозы шуточные и составляются случайно — не принимайте их всерьёз 🙂</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой распорядок дня</title>
+  <link rel="stylesheet" href="raspisanie.css">
+</head>
+<body>
+
+  <header>
+    <h1>Мой распорядок дня</h1>
+    <p id="today"></p>
+
+    <!-- Панель: крупный шрифт, сброс отметок, печать -->
+    <div class="toolbar">
+      <button id="font-btn" aria-pressed="false">Крупный шрифт</button>
+      <button id="reset-btn">Снять все отметки</button>
+      <button id="print-btn">Распечатать</button>
+    </div>
+
+    <p class="progress" id="progress" aria-live="polite"></p>
+  </header>
+
+  <main>
+    <!-- Сюда скрипт добавит пункты распорядка -->
+    <ol class="schedule" id="schedule"></ol>
+
+    <!-- Постоянные напоминания на весь день -->
+    <section class="reminders">
+      <h2>Весь день помните</h2>
+      <ul>
+        <li>🔄 Каждые 20–30 минут меняйте положение тела в коляске: наклонитесь вперёд или вбок, приподнимитесь на руках. Это защищает кожу от пролежней.</li>
+        <li>💧 Пейте воду понемногу в течение дня.</li>
+        <li>📱 Держите телефон и нужные вещи в зоне досягаемости.</li>
+        <li>🆘 Номера близких и экстренной службы (112) должны быть под рукой.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Это примерный распорядок. Время, нагрузку и процедуры лучше согласовать с врачом или реабилитологом.</p>
+  </footer>
+
+  <script src="raspisanie.js"></script>
+</body>
+</html>

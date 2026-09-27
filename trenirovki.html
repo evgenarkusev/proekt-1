@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Программа тренировок</title>
+  <link rel="stylesheet" href="trenirovki.css">
+</head>
+<body>
+
+  <header>
+    <!-- Полоска входа: скрипт покажет «Вход / Регистрация» или имя и «Выйти» -->
+    <div class="auth-bar" id="auth-bar"></div>
+
+    <h1>🏋️ Программа тренировок в зале</h1>
+    <p>Заполните анкету — и получите программу под себя</p>
+  </header>
+
+  <main>
+    <!-- Окно входа и регистрации -->
+    <section class="card" id="auth-card" hidden>
+      <h2 id="auth-title"></h2>
+      <form id="auth-form">
+        <div class="grid">
+          <label>Логин
+            <input type="text" id="auth-login" autocomplete="username" required>
+          </label>
+          <label>Пароль
+            <input type="password" id="auth-pass" required>
+          </label>
+          <label id="auth-pass2-wrap">Повторите пароль
+            <input type="password" id="auth-pass2" autocomplete="new-password">
+          </label>
+        </div>
+        <p class="error" id="auth-error" role="alert"></p>
+        <button type="submit" id="auth-submit"></button>
+        <button type="button" class="link-btn" id="auth-switch"></button>
+        <button type="button" class="link-btn" id="auth-close">Закрыть</button>
+      </form>
+      <p class="warn">⚠️ Учебная регистрация: аккаунты хранятся только в этом браузере на этом компьютере.
+        Не используйте пароль от других сайтов.</p>
+    </section>
+
+    <!-- Мой прогресс: виден только после входа -->
+    <section class="card" id="progress" hidden></section>
+
+    <!-- Анкета -->
+    <form id="form" class="card">
+      <div class="grid">
+        <label>Рост, см
+          <input type="number" id="height" min="120" max="230" required placeholder="175">
+        </label>
+        <label>Вес, кг
+          <input type="number" id="weight" min="30" max="250" step="0.1" required placeholder="70">
+        </label>
+        <label>Возраст, лет
+          <input type="number" id="age" min="14" max="90" required placeholder="25">
+        </label>
+        <label>Пол
+          <select id="sex">
+            <option value="m">Мужской</option>
+            <option value="f">Женский</option>
+          </select>
+        </label>
+        <label>Цель
+          <select id="goal">
+            <option value="loss">Похудеть</option>
+            <option value="mass">Набрать мышечную массу</option>
+            <option value="strength">Стать сильнее</option>
+            <option value="tone">Поддерживать форму</option>
+          </select>
+        </label>
+        <label>Опыт тренировок
+          <select id="level">
+            <option value="beginner">Новичок (меньше 6 месяцев)</option>
+            <option value="middle">Средний (6 месяцев – 2 года)</option>
+            <option value="advanced">Опытный (больше 2 лет)</option>
+          </select>
+        </label>
+        <label>Тренировок в неделю
+          <select id="days">
+            <option value="2">2</option>
+            <option value="3" selected>3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </label>
+      </div>
+      <p class="error" id="error" role="alert"></p>
+      <button type="submit">Составить программу</button>
+    </form>
+
+    <!-- Результат: скрипт заполнит этот блок -->
+    <div id="result" hidden>
+      <section class="card stats" id="stats"></section>
+      <section id="program"></section>
+      <section class="card" id="notes"></section>
+      <p class="center"><button id="print-btn" type="button">Распечатать программу</button></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>Программа составляется автоматически и не заменяет врача или тренера.
+      При болях, болезнях сердца, суставов или спины сначала посоветуйтесь со специалистом.</p>
+  </footer>
+
+  <script src="trenirovki.js"></script>
+</body>
+</html>

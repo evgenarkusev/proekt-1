@@ -1,0 +1,155 @@
+/* Общие настройки страницы */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #f1ecff;
+  /* Тёмно-фиолетовый «ночной» фон */
+  background: linear-gradient(180deg, #1b1035 0%, #2d1b5a 100%);
+  min-height: 100vh;
+}
+
+/* Шапка */
+header {
+  text-align: center;
+  padding: 40px 16px 16px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+#today {
+  color: #c8b8ff;
+  margin-top: 8px;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+/* Блок «Узнать свой знак» */
+.find-sign {
+  text-align: center;
+  margin: 16px 0 32px;
+}
+
+.find-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+input[type="date"] {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #ffcc4d;
+  color: #2d1b5a;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ffe08a;
+}
+
+/* Сетка из 12 знаков */
+.signs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+}
+
+.sign-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid transparent;
+  border-radius: 14px;
+  padding: 16px 8px;
+  text-align: center;
+  color: inherit;
+  font-weight: normal;
+  transition: transform 0.15s, border-color 0.15s;
+}
+
+.sign-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+/* Выбранный знак подсвечивается */
+.sign-card.active {
+  border-color: #ffcc4d;
+}
+
+.sign-card .symbol {
+  font-size: 2.2rem;
+  display: block;
+}
+
+.sign-card .name {
+  display: block;
+  margin-top: 6px;
+  font-weight: bold;
+}
+
+.sign-card .dates {
+  display: block;
+  font-size: 0.8rem;
+  color: #c8b8ff;
+}
+
+/* Блок с прогнозом */
+.result {
+  margin-top: 32px;
+  padding: 28px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.result-symbol {
+  font-size: 3.5rem;
+}
+
+.result h2 {
+  margin: 8px 0 4px;
+}
+
+.result-dates {
+  color: #c8b8ff;
+  margin: 0 0 16px;
+}
+
+.result-text {
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.result-extra {
+  color: #ffcc4d;
+}
+
+/* Подвал */
+footer {
+  text-align: center;
+  padding: 20px 16px;
+  font-size: 0.85rem;
+  color: #a898d8;
+}

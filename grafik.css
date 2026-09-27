@@ -1,0 +1,45 @@
+/* Вкладки «Неделя 1» / «Неделя 2» */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.tab {
+  flex: 1;
+  max-width: 220px;
+  font-weight: bold;
+}
+
+.tab small {
+  font-weight: normal;
+}
+
+/* Выбранная вкладка */
+.tab[aria-selected="true"] {
+  background: #0b3d91;
+  color: #ffffff;
+}
+
+.summary {
+  font-weight: bold;
+  margin: 16px 0;
+}
+
+/* Работа выделяется другим цветом, сон — тёмным */
+.item.work {
+  border-left-color: #c62828;
+  background: #fff5f5;
+}
+
+.item.sleep {
+  border-left-color: #4a3a8c;
+  background: #f3f0ff;
+}
+
+@media print {
+  .tabs .tab[aria-selected="false"] {
+    display: none;
+  }
+}

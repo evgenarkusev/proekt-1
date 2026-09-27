@@ -1,0 +1,295 @@
+/* Общие настройки */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #1c1c1c;
+  background: #eef1f5;
+}
+
+header,
+main,
+footer {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+header {
+  text-align: center;
+  padding-top: 32px;
+}
+
+header h1 {
+  margin: 0;
+  color: #d9480f;
+}
+
+header p {
+  color: #555;
+}
+
+/* Белые «карточки» */
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Анкета: поля в две колонки, на телефоне — в одну */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  gap: 4px;
+}
+
+input,
+select {
+  font: inherit;
+  font-weight: normal;
+  padding: 10px;
+  border: 2px solid #cfd6df;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+input:focus,
+select:focus,
+button:focus-visible {
+  outline: 3px solid #ffa94d;
+  outline-offset: 1px;
+}
+
+button {
+  margin-top: 16px;
+  min-height: 48px;
+  padding: 10px 24px;
+  font: inherit;
+  font-weight: bold;
+  color: #ffffff;
+  background: #d9480f;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #b83c0c;
+}
+
+.error {
+  color: #c92a2a;
+  font-weight: bold;
+  margin: 12px 0 0;
+}
+
+/* Показатели: ИМТ, калории, белок, вода */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #d9480f;
+}
+
+.stat-label {
+  color: #555;
+  font-size: 0.9em;
+}
+
+/* Карточка одного тренировочного дня */
+.day h2 {
+  margin: 0 0 4px;
+}
+
+.day .focus {
+  margin: 0 0 12px;
+  color: #555;
+}
+
+/* Таблица упражнений; на узком экране прокручивается внутри карточки */
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px 6px;
+  border-bottom: 1px solid #e3e7ec;
+}
+
+th {
+  font-size: 0.85em;
+  color: #666;
+}
+
+td.num {
+  white-space: nowrap;
+}
+
+.main-ex {
+  font-weight: bold;
+}
+
+.extra {
+  margin: 12px 0 0;
+  color: #333;
+}
+
+.notes ul,
+#notes ul {
+  padding-left: 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Скрытые блоки должны скрываться, даже если у них задан display */
+[hidden] {
+  display: none !important;
+}
+
+/* ===== Вход и регистрация ===== */
+.auth-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.auth-bar button,
+.small-btn {
+  margin-top: 0;
+  min-height: 40px;
+  padding: 6px 16px;
+}
+
+/* Кнопка-обводка: менее заметная, чем основная */
+.ghost {
+  background: #ffffff;
+  color: #d9480f;
+  border: 2px solid #d9480f;
+}
+
+.ghost:hover {
+  background: #fff4e6;
+}
+
+/* Кнопка, похожая на ссылку */
+.link-btn {
+  background: none;
+  color: #d9480f;
+  text-decoration: underline;
+  padding: 10px 8px;
+}
+
+.link-btn:hover {
+  background: none;
+  color: #b83c0c;
+}
+
+.warn {
+  margin: 12px 0 0;
+  font-size: 0.85em;
+  color: #666;
+}
+
+/* ===== Отслеживание ===== */
+.w-input {
+  width: 90px;
+  padding: 6px 8px;
+}
+
+.done-btn {
+  margin-right: 10px;
+}
+
+.saved-msg {
+  color: #2b8a3e;
+  font-weight: bold;
+}
+
+/* Тренировка, отмеченная сегодня */
+.day.done-today {
+  border-left: 6px solid #2b8a3e;
+}
+
+.hint {
+  color: #777;
+  font-size: 0.9em;
+}
+
+.up {
+  color: #2b8a3e;
+  font-weight: bold;
+}
+
+.down {
+  color: #c92a2a;
+  font-weight: bold;
+}
+
+.history {
+  padding-left: 20px;
+}
+
+.history li {
+  margin-bottom: 6px;
+}
+
+footer {
+  padding-bottom: 32px;
+  color: #666;
+  font-size: 0.85em;
+  text-align: center;
+}
+
+/* При печати убираем анкету и кнопки */
+@media print {
+  #form,
+  #auth-card,
+  #progress,
+  .auth-bar,
+  .hint,
+  button {
+    display: none;
+  }
+  body {
+    background: #ffffff;
+  }
+  .card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+}

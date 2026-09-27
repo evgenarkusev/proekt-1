@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>График смен</title>
+  <!-- Берём готовое оформление от распорядка дня и добавляем стили вкладок -->
+  <link rel="stylesheet" href="raspisanie.css">
+  <link rel="stylesheet" href="grafik.css">
+</head>
+<body>
+
+  <header>
+    <h1>График дня по сменам</h1>
+    <p id="today"></p>
+
+    <!-- Вкладки для переключения недель -->
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" data-week="0">Неделя 1<br><small>первая смена</small></button>
+      <button class="tab" role="tab" data-week="1">Неделя 2<br><small>вторая смена</small></button>
+    </div>
+
+    <div class="toolbar">
+      <button id="font-btn" aria-pressed="false">Крупный шрифт</button>
+      <button id="print-btn">Распечатать</button>
+    </div>
+
+    <p class="summary" id="summary"></p>
+  </header>
+
+  <main>
+    <!-- Сюда скрипт добавит график выбранной недели -->
+    <ol class="schedule" id="schedule"></ol>
+
+    <section class="reminders">
+      <h2 id="tips-title"></h2>
+      <ul id="tips"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Выходные — по своему графику. Время можно поменять в файле grafik.js.</p>
+  </footer>
+
+  <script src="grafik.js"></script>
+</body>
+</html>

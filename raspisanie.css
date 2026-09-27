@@ -1,0 +1,201 @@
+/* Общие настройки: светлый фон и тёмный текст для хорошей контрастности */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #1a1a1a;
+  background: #f4f7fb;
+}
+
+/* Режим «Крупный шрифт» включается кнопкой */
+body.big-font {
+  font-size: 24px;
+}
+
+header,
+main,
+footer {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+header {
+  padding-top: 32px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2em;
+  color: #0b3d91;
+}
+
+#today {
+  margin: 4px 0 16px;
+  color: #444;
+}
+
+/* Кнопки крупные, чтобы в них было легко попасть */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  min-height: 48px;
+  padding: 10px 18px;
+  font-size: 1em;
+  font-family: inherit;
+  border: 2px solid #0b3d91;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #0b3d91;
+  cursor: pointer;
+}
+
+button:hover,
+button[aria-pressed="true"] {
+  background: #0b3d91;
+  color: #ffffff;
+}
+
+/* Заметная рамка при управлении с клавиатуры */
+button:focus-visible,
+input:focus-visible {
+  outline: 4px solid #ff9f1c;
+  outline-offset: 2px;
+}
+
+.progress {
+  font-weight: bold;
+  margin: 16px 0;
+}
+
+/* Список дел */
+.schedule {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #ffffff;
+  border: 2px solid #d5deea;
+  border-left: 8px solid #0b3d91;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+/* Дело, которое идёт прямо сейчас */
+.item.now {
+  border-color: #ff9f1c;
+  box-shadow: 0 0 0 3px #ffe2b8;
+}
+
+/* Выполненное дело */
+.item.done {
+  background: #eef7ee;
+  border-left-color: #2e7d32;
+}
+
+.item.done .title {
+  text-decoration: line-through;
+  color: #555;
+}
+
+/* Большая галочка: вся строка нажимается, а не только квадратик */
+.item label {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  width: 100%;
+  cursor: pointer;
+}
+
+.item input[type="checkbox"] {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  margin-top: 4px;
+  accent-color: #2e7d32;
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 1.8em;
+  line-height: 1;
+}
+
+.time {
+  display: block;
+  font-weight: bold;
+  color: #0b3d91;
+}
+
+.title {
+  display: block;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.note {
+  display: block;
+  color: #444;
+}
+
+.now-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 0 8px;
+  border-radius: 6px;
+  background: #ff9f1c;
+  color: #1a1a1a;
+  font-size: 0.8em;
+}
+
+/* Блок напоминаний */
+.reminders {
+  margin: 28px 0;
+  padding: 16px 20px;
+  background: #fff8e6;
+  border: 2px solid #ffd27a;
+  border-radius: 12px;
+}
+
+.reminders h2 {
+  margin-top: 0;
+}
+
+.reminders li {
+  margin-bottom: 8px;
+}
+
+footer {
+  padding-bottom: 32px;
+  color: #555;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+/* При печати убираем кнопки */
+@media print {
+  .toolbar,
+  .progress {
+    display: none;
+  }
+  body {
+    background: #ffffff;
+  }
+}
